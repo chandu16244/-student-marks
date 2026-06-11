@@ -1,0 +1,116 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// Function to input marks
+void inputMarks(vector<int>& marks) {
+    for (int i = 0; i < marks.size(); i++) {
+        cout << "Enter marks of student " << i + 1 << ": ";
+        cin >> marks[i];
+    }
+}
+
+// Function to display marks
+void displayMarks(const vector<int>& marks) {
+    cout << "\nStudent Marks:\n";
+    for (int i = 0; i < marks.size(); i++) {
+        cout << "Student " << i + 1 << ": " << marks[i] << endl;
+    }
+}
+
+// Function to calculate average
+double calculateAverage(const vector<int>& marks) {
+    int sum = 0;
+    for (int mark : marks) {
+        sum += mark;
+    }
+    return (double)sum / marks.size();
+}
+
+// Function to find highest mark
+int findHighest(const vector<int>& marks) {
+    int highest = marks[0];
+    for (int mark : marks) {
+        if (mark > highest) {
+            highest = mark;
+        }
+    }
+    return highest;
+}
+
+// Function to find lowest mark
+int findLowest(const vector<int>& marks) {
+    int lowest = marks[0];
+    for (int mark : marks) {
+        if (mark < lowest) {
+            lowest = mark;
+        }
+    }
+    return lowest;
+}
+
+int main() {
+    int n;
+
+    cout << "Enter number of students: ";
+    cin >> n;
+
+    vector<int> marks(n);
+
+    inputMarks(marks);
+
+    int choice;
+
+    do {
+        cout << "\n===== Student Marks Management =====\n";
+        cout << "1. Display Marks\n";
+        cout << "2. Show Average Marks\n";
+        cout << "3. Show Highest Marks\n";
+        cout << "4. Show Lowest Marks\n";
+        cout << "5. Show Complete Analysis\n";
+        cout << "0. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                displayMarks(marks);
+                break;
+
+            case 2:
+                cout << "Average Marks: "
+                     << calculateAverage(marks) << endl;
+                break;
+
+            case 3:
+                cout << "Highest Marks: "
+                     << findHighest(marks) << endl;
+                break;
+
+            case 4:
+                cout << "Lowest Marks: "
+                     << findLowest(marks) << endl;
+                break;
+
+            case 5:
+                displayMarks(marks);
+                cout << "Average Marks: "
+                     << calculateAverage(marks) << endl;
+                cout << "Highest Marks: "
+                     << findHighest(marks) << endl;
+                cout << "Lowest Marks: "
+                     << findLowest(marks) << endl;
+                break;
+
+            case 0:
+                cout << "Exiting program...\n";
+                break;
+
+            default:
+                cout << "Invalid choice! Try again.\n";
+        }
+
+    } while (choice != 0);
+
+    return 0;
+}
