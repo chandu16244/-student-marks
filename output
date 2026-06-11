@@ -1,0 +1,26 @@
+Enter number of students: 5
+Enter marks of student 1: 78
+Enter marks of student 2: 85
+Enter marks of student 3: 92
+Enter marks of student 4: 67
+Enter marks of student 5: 88
+
+===== Student Marks Management =====
+1. Display Marks
+2. Show Average Marks
+3. Show Highest Marks
+4. Show Lowest Marks
+5. Show Complete Analysis
+0. Exit
+Enter your choice: 5
+
+Student Marks:
+Student 1: 78
+Student 2: 85
+Student 3: 92
+Student 4: 67
+Student 5: 88
+
+Average Marks: 82
+Highest Marks: 92
+Lowest Marks: 67
